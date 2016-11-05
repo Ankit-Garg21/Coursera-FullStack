@@ -34,7 +34,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a href="index.html" class="navbar-brand"><img src="img/logo.png" height=30 width=41></a>
+				<a href="index.html" class="navbar-brand"><img
+					src="img/logo.png" height=30 width=41></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -62,26 +63,45 @@
 					<li class="active"><a href="#"><i class="fa fa-envelope-o"></i>
 							Contact</a></li>
 				</ul>
-				<form class="navbar-form navbar-right">
-					<div class="form-group">
-						<input type="text" class="form-control" id="email"
-							name="email" placeholder="Email">
-						<input type="password" class="form-control" id="password"
-							name="password" placeholder="Password">
-						<div class="checkbox">
-							<label class="checkbox-inline">
-								<input type="checkbox" name="remember" value="">
-								<span style="color:#fff;">Remember me</span>
-							</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<button type="submit" class="btn btn-primary">Sign in</button>
-					</div>
-				</form>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a data-toggle="modal" data-target="#loginModal"> <span
+							class="glyphicon glyphicon-log-in"></span> Login
+					</a></li>
+				</ul>
 			</div>
 		</div>
 	</nav>
+
+	<div id="loginModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" style="width:103%;">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Login</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-inline">
+						<div class="form-group">
+							<input type="text" class="form-control input-sm" id="email"
+								name="email" placeholder="Email"> <input type="password"
+								class="form-control input-sm" id="password" name="password"
+								placeholder="Password">
+							<div class="checkbox">
+								<label class="checkbox-inline"> <input type="checkbox"
+									name="remember" value="">Remember me
+								</label>
+							</div>
+							<button type="submit" class="btn btn-info btn-sm">Sign
+								in</button>
+							<button type="submit" class="btn btn-default btn-sm"
+								data-dismiss="modal">Cancel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<header class="jumbotron">
 		<!-- Main component for a primary marketing message or call to action -->
 		<div class="container">
@@ -99,7 +119,9 @@
 				</div>
 				<div class="col-xs-12 col-sm-2">
 					<p style="padding: 40px"></p>
-					<a class="btn btn-block btn-warning" href="#reserve">Reserve Table</a>
+					<a class="btn btn-block btn-warning" href="#reserve"
+						data-toggle="tooltip" data-placement="bottom"
+						title="Or Call us at +85212345678">Reserve Table</a>
 				</div>
 			</div>
 		</div>
@@ -146,7 +168,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row row-content" id="reserve">
 			<div class="col-xs-12 col-sm-3">
 				<p style="padding: 20px;"></p>
@@ -158,24 +180,34 @@
 						<label class="control-label col-sm-2">Number of Guests</label>
 						<div class="col-sm-10">
 							<div class="radio">
-								<label class="radio-inline"><input type="radio" name="noOfGuests" value="1">1</label>
-								<label class="radio-inline"><input type="radio" name="noOfGuests" value="1">2</label>
-								<label class="radio-inline"><input type="radio" name="noOfGuests" value="1">3</label>
-								<label class="radio-inline"><input type="radio" name="noOfGuests" value="1">4</label>
-								<label class="radio-inline"><input type="radio" name="noOfGuests" value="1">5</label>
-								<label class="radio-inline"><input type="radio" name="noOfGuests" value="1">6</label>
+								<label class="radio-inline"><input type="radio"
+									name="noOfGuests" value="1">1</label> <label
+									class="radio-inline"><input type="radio"
+									name="noOfGuests" value="1">2</label> <label
+									class="radio-inline"><input type="radio"
+									name="noOfGuests" value="1">3</label> <label
+									class="radio-inline"><input type="radio"
+									name="noOfGuests" value="1">4</label> <label
+									class="radio-inline"><input type="radio"
+									name="noOfGuests" value="1">5</label> <label
+									class="radio-inline"><input type="radio"
+									name="noOfGuests" value="1">6</label>
 							</div>
 						</div>
 					</div>
 					<div class="form-group has-feedback">
 						<label class="col-sm-2 control-label">Date and Time</label>
 						<div class="col-sm-4">
-							<input type="text" name="reserveDate" class="form-control" placeholder="Date">
-							<span class="glyphicon glyphicon-calendar form-control-feedback" aria-hidden="true"></span>
+							<input type="text" name="reserveDate" class="form-control"
+								placeholder="Date"> <span
+								class="glyphicon glyphicon-calendar form-control-feedback"
+								aria-hidden="true"></span>
 						</div>
 						<div class="col-sm-4">
-							<input type="text" name="reserveTime" class="form-control" placeholder="Time">
-							<span class="glyphicon glyphicon-time form-control-feedback" aria-hidden="true"></span>
+							<input type="text" name="reserveTime" class="form-control"
+								placeholder="Time"> <span
+								class="glyphicon glyphicon-time form-control-feedback"
+								aria-hidden="true"></span>
 						</div>
 					</div>
 					<div class="form-group">
@@ -185,10 +217,13 @@
 					</div>
 					<div class="form-group">
 						<div class="alert alert-warning alert-dismissable" role="alert">
-							<button type="button" class="close" data-dismiss="alert" aria-label="close">
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="close">
 								<span aria-hidden="true">&times;</span>
 							</button>
-							<strong>Warning::</strong> Please <a class="alert-link" href="tel:+9876543210">call</a> us to reserve for more than six guests.
+							<strong>Warning::</strong> Please <a class="alert-link"
+								href="tel:+9876543210">call</a> us to reserve for more than six
+							guests.
 						</div>
 					</div>
 				</form>
@@ -242,9 +277,9 @@
 					</div>
 					<div class="form-group">
 						<div class="checkbox col-sm-5 col-sm-offset-2">
-							<label class="checkbox-inline">
-								<input type="checkbox" name="approve" value="">
-								<strong>May we contact you?</strong>
+							<label class="checkbox-inline"> <input type="checkbox"
+								name="approve" value=""> <strong>May we contact
+									you?</strong>
 							</label>
 						</div>
 						<div class="col-sm-4 col-sm-offset-1">
@@ -255,14 +290,17 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="feedback" class="col-sm-2 control-label">Your Feedback</label>
+						<label for="feedback" class="col-sm-2 control-label">Your
+							Feedback</label>
 						<div class="col-sm-10">
-							<textarea rows="12" class="form-control" id="feedback" name="feedback"></textarea>
+							<textarea rows="12" class="form-control" id="feedback"
+								name="feedback"></textarea>
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
-							<button type="submit" class="btn btn-primary">Send Feedback</button>
+							<button type="submit" class="btn btn-primary">Send
+								Feedback</button>
 						</div>
 					</div>
 				</form>
@@ -325,6 +363,12 @@
 	<!-- <script src="js/jquery.min.js"></script> -->
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('[data-toggle="tooltip"]').tooltip();
+		});
+	</script>
 </body>
 
 </html>
