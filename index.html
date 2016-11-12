@@ -8,9 +8,12 @@
 
 <title>Ristorante Con Fusion</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/font-awesome.min.css" rel="stylesheet"></link>
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+<link href="bower_components/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet"></link>
 <link href="css/bootstrap-social.css" rel="stylesheet"></link>
 <link href="css/mystyles.css" rel="stylesheet">
 </head>
@@ -56,9 +59,8 @@
 							Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a data-toggle="modal" data-target="#loginModal"> <span
-							class="glyphicon glyphicon-log-in"></span> Login
-					</a></li>
+					<li><a id="login"><span class="glyphicon glyphicon-log-in"></span>
+							Login </a></li>
 				</ul>
 			</div>
 		</div>
@@ -127,7 +129,8 @@
 							<div class="col-sm-10">
 								<div class="btn-group" data-toggle="buttons">
 									<label class="btn btn-success active"> <input
-										type="radio" name="section" autocomplete="off" checked> Non-Smoking
+										type="radio" name="section" autocomplete="off" checked>
+										Non-Smoking
 									</label> <label class="btn btn-danger"> <input type="radio"
 										name="section" autocomplete="off">Smoking
 									</label>
@@ -192,8 +195,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-2">
 					<p style="padding: 40px"></p>
-					<a class="btn btn-block btn-warning" href="#reserve"
-						data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+					<a id="reserve-table" class="btn btn-block btn-warning">Reserve Table</a>
 				</div>
 			</div>
 		</div>
@@ -266,6 +268,14 @@
 						class="glyphicon glyphicon-chevron-right" aria-hidden="true">
 					</span><span class="sr-only">Next</span>
 					</a>
+					<div class="btn-group" id="carouselButtons">
+						<button class="btn btn-danger btn-xs" id="carousel-pause">
+							<span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
+						</button>
+						<button class="btn btn-danger btn-xs" id="carousel-play">
+							<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -407,9 +417,31 @@
 		</div>
 	</footer>
 	<!-- <script src="js/jquery.min.js"></script> -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#mycarousel").carousel({
+				interval : 2000
+			});
+		});
+
+		$("#carousel-pause").click(function() {
+			$("#mycarousel").carousel('pause');
+		});
+
+		$("#carousel-play").click(function() {
+			$("#mycarousel").carousel('cycle');
+		});
+		
+		$("#login").click(function() {
+			$("#loginModal").modal('show');
+		});
+		
+		$("#reserve-table").click(function() {
+			$("#reserveModal").modal('show');
+		});
+	</script>
 </body>
 
 </html>

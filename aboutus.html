@@ -9,9 +9,12 @@
          content must come *after* these tags -->
 <title>Ristorante Con Fusion: About Us</title>
 <!-- Bootstrap -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"
+	rel="stylesheet">
+<link href="bower_components/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet"></link>
 <link href="css/bootstrap-social.css" rel="stylesheet">
 <link href="css/mystyles.css" rel="stylesheet">
 
@@ -63,9 +66,8 @@
 							Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a data-toggle="modal" data-target="#loginModal"> <span
-							class="glyphicon glyphicon-log-in"></span> Login
-					</a></li>
+					<li><a id="login"><span class="glyphicon glyphicon-log-in"></span>
+							Login </a></li>
 				</ul>
 			</div>
 		</div>
@@ -199,8 +201,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-2">
 					<p style="padding: 40px"></p>
-					<a class="btn btn-block btn-warning" href="#reserve"
-						data-toggle="modal" data-target="#reserveModal">Reserve Table</a>
+					<a id="reserve-table" class="btn btn-block btn-warning">Reserve Table</a>
 				</div>
 			</div>
 		</div>
@@ -485,10 +486,17 @@
 	</footer>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<!-- <script src="js/jquery.min.js"></script> -->
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script>
+		$("#login").click(function() {
+			$("#loginModal").modal('show');
+		});
+
+		$("#reserve-table").click(function() {
+			$("#reserveModal").modal('show');
+		});
+	</script>
 
 </body>
 
