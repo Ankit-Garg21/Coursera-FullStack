@@ -1,0 +1,29 @@
+{
+  "name": "con-fusion",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Ankit-Garg21/Coursera-FullStack",
+  "authors": [
+    "Ankit"
+  ],
+  "description": "Courera Fullstack Exercises",
+  "main": "index.html",
+  "keywords": [
+    "conFusion",
+    "Fusion",
+    "Restaurant",
+    "Coursera",
+    "Fullstack"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
