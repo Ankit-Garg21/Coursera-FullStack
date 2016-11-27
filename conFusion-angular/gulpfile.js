@@ -4,6 +4,8 @@ var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
     uglify = require('gulp-uglify'),
     usemin = require('gulp-usemin'),
+    useref = require('gulp-useref'),
+    gulpif = require('gulp-if'),
     imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
@@ -11,6 +13,7 @@ var gulp = require('gulp'),
     cache = require('gulp-cache'),
     changed = require('gulp-changed'),
     rev = require('gulp-rev'),
+    revReplace = require('gulp-rev-replace'),
     browserSync = require('browser-sync'),
     ngannotate = require('gulp-ng-annotate'),
     del = require('del');
@@ -22,12 +25,21 @@ gulp.task('jshint', function() {
 });
 
 gulp.task('usemin', ['jshint'], function() {
-   return gulp.src('./app/menu.html')
-        .pipe(usemin({
+   return gulp.src('./app/*.html')
+        .pipe(useref({
             css: [minifycss(), rev()],
             js: [ngannotate(), uglify(), rev()]
         }))
         .pipe(gulp.dest('dist/'));
+    
+//    return gulp.src('./app/*.html')
+//            .pipe(useref())
+//            .pipe(gulpif('*.css', minifycss()))
+//            .pipe(gulpif('*.js', ngannotate(), uglify()))
+//            .pipe(gulpif('*.css', rev()))
+//            .pipe(gulpif('*.js', rev()))
+//            .pipe(revReplace())
+//            .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('imagemin', function() {
