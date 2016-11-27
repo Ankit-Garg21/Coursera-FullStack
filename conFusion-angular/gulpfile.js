@@ -26,7 +26,8 @@ gulp.task('jshint', function() {
 
 gulp.task('usemin', ['jshint'], function() {
    return gulp.src('./app/*.html')
-        .pipe(useref({
+        // .pipe(useref({
+        .pipe(usemin({
             css: [minifycss(), rev()],
             js: [ngannotate(), uglify(), rev()]
         }))
@@ -62,7 +63,7 @@ gulp.task('copyfonts', ['clean'], function() {
 });
 
 gulp.task('watch', ['browser-sync'], function() {
-   gulp.watch('{app/scripts/**/*.js, app/styles/**/*.css, app/**/*.html}', ['usemin']);
+   gulp.watch(['app/scripts/**/*.js', 'app/styles/**/*.css', 'app/**/*.html'], ['usemin', browserSync.reload]);
    gulp.watch('app/images/**/*', ['imagemin']);
 });
 
@@ -74,14 +75,15 @@ gulp.task('browser-sync', ['default'], function() {
         'app/scripts/**/*.js',
         'dist/**/*'
     ];
+    
     browserSync.init(files, {
        server: {
            baseDir: 'dist',
-           index: 'menu.html'
+           index: 'index.html'
        } 
     });
     
-    gulp.watch(['dist/**']).on('change', browserSync.reload)
+    gulp.watch(['dist/**']).on('change', browserSync.reload);
 });
 
 gulp.task('default', ['clean'], function() {
